@@ -1,0 +1,30 @@
+<div class="bg">
+
+    <marquee behavior="scroll" direction="left" class="mt-2 ">
+        <ul class="list-inline">
+            <li class="list-inline-item p-2 border rounded bg-light text-danger" *ngFor="let n of api.newsList.data">
+                *{{n.title}}*
+            </li>
+        </ul>
+    </marquee>
+
+    <div class="card text-white mt-2" *ngFor="let n of api.newsList.data"
+        style="height: 200px; background-color: rgb(75, 75, 75);">
+        <div class="row">
+            <div class="w-25">
+                <img src="{{n.imageUrl}}" class="m-2" alt="Image Not Available">
+            </div>
+            <div class="w-75 p-1 overflow-y-hidden">
+                <h5>{{n.title}}</h5>
+                <hr>
+                {{n.content}}
+
+                <p style="text-align: end; padding-right: 20px;">{{n.date}} {{n.time}} <a target="_blank"
+                        href="{{n.readMoreUrl}}">Read
+                        More</a> </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
